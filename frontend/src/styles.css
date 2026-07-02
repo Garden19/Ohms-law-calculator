@@ -5,8 +5,13 @@ html, body {
   height: 100%;
 }
 
+body {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%)
+}
+
 * {
   box-sizing: border-box;
+  transition: 0.4s ease-in-out;
 }
 
 app-root {
