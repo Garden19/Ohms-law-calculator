@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="separated-container">
+        <img src="/logo.png" alt="Vape with an ohm symbol">
+    </div>
+        <div class="separated-container">
+            <form [formGroup]="Calculator" (ngOnSubit)="onAddCalculation()">
+                <div class="section">
+                    <label for="userVoltage">What is your battery voltage</label>
+                    <input type="number" formControlName="userVoltage" id="userVoltage" required>
+                </div>
+                <div class="section">
+                    <label for="coilResistance">What is your coils resistance?</label>
+                    <input type="number" formControlName="userCoilResistance" id="coilResistance" required>
+                </div>
+                <div class="section">
+                    <label for="userBatteryAmpRating">What is your battery amp rating?</label>
+                    <input type="number" formControlName="userBatteryAmpRating" id="userBatteryAmpRating" required>
+                </div>
+                <div class="section">
+                    <button type="submit" (click)="onAddCalculation()">Calculate</button>
+                </div>
+            </form>
+            <div class="results">
+                @if (isSafe === true) {
+                    <h1 [class.safe]="this.isSafe == true">This is a safe calculation!</h1>
+                } @else if (isSafe === false) {
+                    <h1 [class.notSafe]="this.isSafe == false">This is not a safe calculation!</h1>
+                }
+            </div>
+        </div>
+</div>
