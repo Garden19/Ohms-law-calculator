@@ -6,7 +6,9 @@ html, body {
 }
 
 body {
-  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%)
+  background: #4b6cb7;
+  background-repeat: no-repeat;
+  background-position: str;
 }
 
 * {
