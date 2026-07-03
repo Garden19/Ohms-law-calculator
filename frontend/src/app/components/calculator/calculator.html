@@ -3,7 +3,7 @@
         <img src="/logo.png" alt="Vape with an ohm symbol">
     </div>
         <div class="separated-container">
-            <form [formGroup]="Calculator" (ngOnSubit)="onAddCalculation()">
+            <form [formGroup]="calculatorForm" (ngOnSubmit)="onAddCalculation()">
                 <div class="section">
                     <label for="userVoltage">What is your battery voltage</label>
                     <input type="number" formControlName="userVoltage" id="userVoltage" required>
@@ -17,7 +17,7 @@
                     <input type="number" formControlName="userBatteryAmpRating" id="userBatteryAmpRating" required>
                 </div>
                 <div class="section">
-                    <button type="submit" (click)="onAddCalculation()">Calculate</button>
+                    <button (click)="onAddCalculation()">Calculate</button>
                 </div>
             </form>
             <div class="results">

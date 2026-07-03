@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from "@angular/forms";
-import { NewCalculation } from '../../Models/newCalculation';
+import { NewCalculation } from '../../models/new-calculation';
 
 @Component({
   selector: 'app-calculator',
@@ -13,17 +13,17 @@ export class Calculator {
   isSafe: boolean | null = null;
   safe = false;
 
-  Calculator = new FormGroup({
+  calculatorForm = new FormGroup({
     userVoltage: new FormControl(0, Validators.required),
     userCoilResistance: new FormControl(0, Validators.required),
     userBatteryAmpRating: new FormControl(0, Validators.required),
   })
 
-  onAddCalculation() {
+  async onAddCalculation() {
     const newCalculation: NewCalculation = {
-      userVoltage: this.Calculator.value.userVoltage ?? 0,
-      userCoilResistance: this.Calculator.value.userCoilResistance ?? 0,
-      userBatteryAmpRating: this.Calculator.value.userBatteryAmpRating ?? 0,
+      userVoltage: this.calculatorForm.value.userVoltage ?? 0,
+      userCoilResistance: this.calculatorForm.value.userCoilResistance ?? 0,
+      userBatteryAmpRating: this.calculatorForm.value.userBatteryAmpRating ?? 0,
     };
     
     let userVoltage = newCalculation.userVoltage;
@@ -33,10 +33,16 @@ export class Calculator {
     
     if (userAmps > userBatteryAmpRating) {
       this.isSafe = false;
-      this.safe = false;
     } else {
       this.isSafe = true;
-      this.safe = true;
     }
+    setTimeout(() => {
+        this.isSafe = null;
+        this.calculatorForm.reset({
+          userVoltage: 0,
+          userCoilResistance: 0,
+          userBatteryAmpRating: 0,
+        })
+    }, 3000);
   }
 }
