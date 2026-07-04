@@ -66,6 +66,10 @@ button {
     font-weight: bold;
 }
 
+.batterySelectionMade {
+    display: none;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

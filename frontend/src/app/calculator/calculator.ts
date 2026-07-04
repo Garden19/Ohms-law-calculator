@@ -14,6 +14,7 @@ export class Calculator {
 
   isSafe: boolean | null = null;
   safe = false;
+  batterySelectionMade = false;
 
   calculatorForm = new FormGroup({
     userVoltage: new FormControl(0, Validators.required),
@@ -22,6 +23,7 @@ export class Calculator {
   })
 
   onBatterySelected(battery: Battery) {
+    this.batterySelectionMade = true;
     this.calculatorForm.patchValue({
       userVoltage: battery.voltage,
       userBatteryAmpRating: battery.ampRating,

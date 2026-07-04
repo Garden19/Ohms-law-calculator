@@ -7,17 +7,19 @@
                 <div class="section">
                     <app-battery-selector (batterySelected)="onBatterySelected($event)"/>
                 </div>
-                <div class="section">
-                    <label for="userVoltage">What is your battery voltage</label>
-                    <input type="number" formControlName="userVoltage" id="userVoltage" required>
-                </div>
+                @if (batterySelectionMade === false) {
+                    <div class="section">
+                        <label for="userVoltage">What is your battery voltage</label>
+                        <input type="number" formControlName="userVoltage" id="userVoltage" required>
+                    </div>
+                    <div class="section">
+                        <label for="userBatteryAmpRating">What is your battery amp rating?</label>
+                        <input type="number" formControlName="userBatteryAmpRating" id="userBatteryAmpRating" required>
+                    </div>
+                }
                 <div class="section">
                     <label for="coilResistance">What is your coils resistance?</label>
                     <input type="number" formControlName="userCoilResistance" id="coilResistance" required>
-                </div>
-                <div class="section">
-                    <label for="userBatteryAmpRating">What is your battery amp rating?</label>
-                    <input type="number" formControlName="userBatteryAmpRating" id="userBatteryAmpRating" required>
                 </div>
                 <div class="section">
                     <button (click)="onAddCalculation()">Calculate</button>
