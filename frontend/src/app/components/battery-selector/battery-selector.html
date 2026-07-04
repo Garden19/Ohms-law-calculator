@@ -1,0 +1,9 @@
+<div class="section">
+    <label >Select a pre-configured battery</label>
+    <select (change)="onBatteryChange($event)">
+        <option value="">Select a battery</option>
+        @for (battery of batteries; track battery.id) {
+            <option [value]="battery.id">{{battery.brand}} {{ battery.model }} - {{battery.ampRating}}A</option>
+        }
+    </select>
+</div>
