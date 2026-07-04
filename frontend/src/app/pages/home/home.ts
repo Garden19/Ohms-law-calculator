@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Calculator } from '../../components/calculator/calculator';
+import { Calculator } from '../../calculator/calculator';
+
 
 @Component({
   selector: 'app-home',
