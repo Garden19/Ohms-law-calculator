@@ -52,8 +52,8 @@ If the required amps are higher than the battery amp rating, the app displays an
 
 ## Project Structure
 
-Frontend > Angular 20 application
-Backend > ASP.NET Core web API
+- Frontend > Angular 20 application
+- Backend > ASP.NET Core web API
 
 ## How to Run the Project
 
@@ -146,7 +146,14 @@ This calculator is for educational and practice purposes only.
 Battery safety is important. Users should always check reliable battery safety information and manufacturer guidance before using mechanical mods or low-resistance coil builds.
 
 ## Screenshots
-TBC
+### Desktop
+<img width="1872" height="912" alt="image" src="https://github.com/user-attachments/assets/3d00b3bd-9339-4f2b-8250-258bdfbc6613" />
+<img width="1841" height="908" alt="image" src="https://github.com/user-attachments/assets/1f265ffd-638f-4978-aa86-44c22b2dba79" />
+
+### Mobile
+<img width="582" height="911" alt="image" src="https://github.com/user-attachments/assets/9d553252-0a9a-4113-bf3f-64c5a6814f50" />
+<img width="575" height="911" alt="image" src="https://github.com/user-attachments/assets/f3dfd8a4-6911-4708-b09a-11cdbc4a2564" />
+
 
 ## Future Improvements
 - Add a database so users can save their own batteries.
